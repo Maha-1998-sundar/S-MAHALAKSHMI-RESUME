@@ -7,6 +7,7 @@
     <title>Mahalakshmi S | Cloud Engineer</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -16,62 +17,69 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f4f7fb;
+            background: #f5f7fa;
             color: #1f2937;
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        /* ================= NAVIGATION ================= */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
             background: #0b1f3a;
-            padding: 16px 6%;
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
         }
 
         .logo {
             color: white;
             font-size: 21px;
-            font-weight: bold;
+            font-weight: 700;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            align-items: center;
+            gap: 18px;
         }
 
         nav ul li a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
             color: #60a5fa;
         }
 
-        /* HERO */
+        /* ================= HERO ================= */
 
         .hero {
-            min-height: 88vh;
+            min-height: 82vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 20px;
+            padding: 70px 20px;
 
-            background: linear-gradient(
-                135deg,
-                #071a33,
-                #174d78
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a33,
+                    #174d78
+                );
 
             color: white;
         }
@@ -88,16 +96,16 @@
 
         .hero h2 {
             font-size: 26px;
-            font-weight: normal;
+            font-weight: 400;
             color: #dbeafe;
             margin-bottom: 25px;
         }
 
         .hero p {
+            max-width: 760px;
+            margin: auto;
             font-size: 17px;
             color: #e5e7eb;
-            max-width: 750px;
-            margin: auto;
         }
 
         .hero-buttons {
@@ -106,11 +114,11 @@
 
         .btn {
             display: inline-block;
-            padding: 13px 25px;
+            padding: 13px 26px;
             margin: 6px;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             transition: 0.3s;
         }
 
@@ -133,22 +141,32 @@
             color: #0b1f3a;
         }
 
-        /* SECTIONS */
+        /* ================= GENERAL SECTIONS ================= */
 
         section {
             max-width: 1100px;
             margin: auto;
-            padding: 75px 25px;
+            padding: 70px 25px;
         }
 
         section h2 {
             text-align: center;
             color: #0b1f3a;
-            font-size: 32px;
-            margin-bottom: 40px;
+            font-size: 31px;
+            margin-bottom: 38px;
         }
 
-        /* ABOUT */
+        section h2::after {
+            content: "";
+            display: block;
+            width: 55px;
+            height: 3px;
+            background: #174d78;
+            margin: 12px auto 0;
+            border-radius: 5px;
+        }
+
+        /* ================= ABOUT ================= */
 
         .about {
             background: white;
@@ -162,25 +180,30 @@
 
         .about-content p {
             font-size: 17px;
+            color: #374151;
         }
 
-        /* SKILLS */
+        /* ================= SKILLS ================= */
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(250px, 1fr)
-            );
+            grid-template-columns:
+                repeat(auto-fit, minmax(245px, 1fr));
             gap: 20px;
         }
 
         .skill-card {
             background: white;
             padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-radius: 9px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
             border-top: 4px solid #174d78;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.11);
         }
 
         .skill-card h3 {
@@ -192,14 +215,40 @@
             color: #4b5563;
         }
 
-        /* EXPERIENCE */
+        /* ================= TRAINING ================= */
+
+        .training-card {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #174d78;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .training-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 5px;
+        }
+
+        .training-date {
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .training-card ul {
+            padding-left: 22px;
+        }
+
+        /* ================= EXPERIENCE ================= */
 
         .experience-card {
             background: white;
             padding: 30px;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             border-left: 5px solid #174d78;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
         }
 
         .experience-card h3 {
@@ -209,19 +258,19 @@
 
         .experience-date {
             color: #6b7280;
+            font-weight: 600;
             margin-bottom: 15px;
-            font-weight: bold;
         }
 
         .experience-card ul {
             padding-left: 22px;
         }
 
-        /* PROJECTS */
+        /* ================= PROJECTS ================= */
 
         .projects {
-            background: #eef3f8;
             max-width: none;
+            background: #eef3f8;
         }
 
         .projects-inner {
@@ -231,25 +280,30 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(300px, 1fr)
-            );
-            gap: 25px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
         }
 
         .project-card {
             background: white;
             padding: 28px;
-            border-radius: 8px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-radius: 9px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
             display: flex;
             flex-direction: column;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 22px rgba(0,0,0,0.11);
         }
 
         .project-card h3 {
             color: #174d78;
             margin-bottom: 12px;
+            font-size: 19px;
         }
 
         .project-card p {
@@ -263,7 +317,7 @@
 
         .project-link a {
             color: #174d78;
-            font-weight: bold;
+            font-weight: 700;
             text-decoration: none;
         }
 
@@ -271,7 +325,7 @@
             text-decoration: underline;
         }
 
-        /* CERTIFICATIONS */
+        /* ================= CERTIFICATIONS ================= */
 
         .certifications {
             background: white;
@@ -280,13 +334,18 @@
         .cert-card {
             background: #f5f7fa;
             padding: 22px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             border-left: 5px solid #174d78;
+            border-radius: 5px;
         }
 
         .cert-card h3 {
             color: #0b1f3a;
             margin-bottom: 5px;
+        }
+
+        .cert-card p {
+            color: #4b5563;
         }
 
         .credly {
@@ -296,18 +355,19 @@
 
         .credly a {
             color: #174d78;
-            font-weight: bold;
+            font-weight: 700;
             text-decoration: none;
         }
 
-        /* EDUCATION */
+        /* ================= EDUCATION ================= */
 
         .education-card {
             background: white;
             padding: 25px;
             margin-bottom: 20px;
             border-left: 5px solid #174d78;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
         }
 
         .education-card h3 {
@@ -315,31 +375,11 @@
             margin-bottom: 5px;
         }
 
-        /* TRAINING */
-
-        .training-card {
-            background: white;
-            padding: 30px;
-            border-left: 5px solid #174d78;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        .education-card p {
+            color: #4b5563;
         }
 
-        .training-card h3 {
-            color: #0b1f3a;
-            margin-bottom: 5px;
-        }
-
-        .training-date {
-            color: #666;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .training-card ul {
-            padding-left: 22px;
-        }
-
-        /* RESUME */
+        /* ================= RESUME ================= */
 
         .resume-section {
             text-align: center;
@@ -347,7 +387,8 @@
         }
 
         .resume-section p {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            color: #4b5563;
         }
 
         .resume-button {
@@ -355,20 +396,17 @@
             background: #0b1f3a;
             color: white;
             padding: 14px 28px;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            transition: 0.3s;
         }
 
         .resume-button:hover {
             background: #174d78;
         }
 
-        /* LANGUAGES */
-
-        .languages {
-            text-align: center;
-        }
+        /* ================= LANGUAGES ================= */
 
         .language-list {
             display: flex;
@@ -380,11 +418,11 @@
         .language {
             background: white;
             padding: 12px 22px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 6px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
         }
 
-        /* CONTACT */
+        /* ================= CONTACT ================= */
 
         .contact {
             max-width: none;
@@ -410,7 +448,7 @@
             text-decoration: underline;
         }
 
-        /* FOOTER */
+        /* ================= FOOTER ================= */
 
         footer {
             background: #061426;
@@ -420,9 +458,9 @@
             font-size: 14px;
         }
 
-        /* MOBILE */
+        /* ================= MOBILE ================= */
 
-        @media (max-width: 768px) {
+        @media (max-width: 950px) {
 
             nav {
                 flex-direction: column;
@@ -435,6 +473,14 @@
                 gap: 12px;
             }
 
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                min-height: 75vh;
+            }
+
             .hero h1 {
                 font-size: 38px;
             }
@@ -443,12 +489,26 @@
                 font-size: 21px;
             }
 
+            .hero p {
+                font-size: 16px;
+            }
+
             section {
                 padding: 55px 20px;
             }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
 
     </style>
+
 </head>
 
 
@@ -677,7 +737,7 @@
 </section>
 
 
-<!-- ================= CLOUD TRAINING ================= -->
+<!-- ================= TRAINING ================= -->
 
 <section id="training">
 
@@ -828,8 +888,6 @@
         <div class="projects-grid">
 
 
-            <!-- PROJECT 1 -->
-
             <div class="project-card">
 
                 <h3>
@@ -842,8 +900,8 @@
                     CloudFront for secure, scalable and
                     cost-efficient content delivery.
                     Implemented private S3 bucket access
-                    using Origin Access Control (OAC)
-                    and enforced HTTPS.
+                    using Origin Access Control (OAC) and
+                    enforced HTTPS.
                 </p>
 
                 <div class="project-link">
@@ -859,8 +917,6 @@
 
             </div>
 
-
-            <!-- PROJECT 2 -->
 
             <div class="project-card">
 
@@ -892,8 +948,6 @@
             </div>
 
 
-            <!-- PROJECT 3 -->
-
             <div class="project-card">
 
                 <h3>
@@ -923,8 +977,6 @@
 
             </div>
 
-
-            <!-- PROJECT 4 -->
 
             <div class="project-card">
 
@@ -1118,7 +1170,7 @@
 
 <!-- ================= LANGUAGES ================= -->
 
-<section class="languages">
+<section>
 
     <h2>Languages</h2>
 
