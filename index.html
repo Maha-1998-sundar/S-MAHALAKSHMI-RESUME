@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mahalahshmi S | Cloud Engineer</title>
+    <title>Mahalakshmi S | Cloud Engineer</title>
 
     <style>
         * {
@@ -16,19 +16,19 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
             color: #1f2937;
-            background: #f5f7fa;
             line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* NAVIGATION */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
             background: #0b1f3a;
-            padding: 15px 6%;
+            padding: 16px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,18 +42,18 @@
         }
 
         nav ul {
-            display: flex;
             list-style: none;
-            gap: 22px;
+            display: flex;
+            gap: 20px;
         }
 
-        nav a {
+        nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 14px;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             color: #60a5fa;
         }
 
@@ -62,17 +62,16 @@
         .hero {
             min-height: 88vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             text-align: center;
             padding: 60px 20px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #071a33,
-                    #123f6d
-                );
+            background: linear-gradient(
+                135deg,
+                #071a33,
+                #174d78
+            );
 
             color: white;
         }
@@ -90,15 +89,15 @@
         .hero h2 {
             font-size: 26px;
             font-weight: normal;
-            margin-bottom: 25px;
             color: #dbeafe;
+            margin-bottom: 25px;
         }
 
         .hero p {
             font-size: 17px;
+            color: #e5e7eb;
             max-width: 750px;
             margin: auto;
-            color: #e5e7eb;
         }
 
         .hero-buttons {
@@ -134,7 +133,7 @@
             color: #0b1f3a;
         }
 
-        /* GENERAL SECTION */
+        /* SECTIONS */
 
         section {
             max-width: 1100px;
@@ -222,6 +221,12 @@
 
         .projects {
             background: #eef3f8;
+            max-width: none;
+        }
+
+        .projects-inner {
+            max-width: 1100px;
+            margin: auto;
         }
 
         .projects-grid {
@@ -281,10 +286,7 @@
 
         .cert-card h3 {
             color: #0b1f3a;
-        }
-
-        .cert-card p {
-            color: #555;
+            margin-bottom: 5px;
         }
 
         .credly {
@@ -310,6 +312,31 @@
 
         .education-card h3 {
             color: #0b1f3a;
+            margin-bottom: 5px;
+        }
+
+        /* TRAINING */
+
+        .training-card {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #174d78;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .training-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 5px;
+        }
+
+        .training-date {
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .training-card ul {
+            padding-left: 22px;
         }
 
         /* RESUME */
@@ -321,6 +348,20 @@
 
         .resume-section p {
             margin-bottom: 20px;
+        }
+
+        .resume-button {
+            display: inline-block;
+            background: #0b1f3a;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resume-button:hover {
+            background: #174d78;
         }
 
         /* LANGUAGES */
@@ -406,10 +447,13 @@
                 padding: 55px 20px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVIGATION ================= -->
 
@@ -420,14 +464,43 @@
     </div>
 
     <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#training">Training</a>
+        </li>
+
+        <li>
+            <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#certifications">Certifications</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#resume">Resume</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
     </ul>
 
 </nav>
@@ -441,24 +514,30 @@
 
         <h1>MAHALAKSHMI S</h1>
 
-        <h2>Cloud Engineer (Entry Level)</h2>
+        <h2>
+            Cloud Engineer (Entry Level)
+        </h2>
 
         <p>
-            Entry-Level Cloud Engineer with AWS Certified Cloud Practitioner
-            credential and hands-on project exposure to AWS services,
-            networking, Linux, Git/GitHub, Python and SQL.
+            AWS Certified Cloud Practitioner with hands-on exposure
+            to AWS cloud services, networking, Linux, Git/GitHub,
+            Python basics, SQL basics and cloud projects.
         </p>
 
         <div class="hero-buttons">
 
-            <a href="resume.pdf"
-               target="_blank"
-               class="btn btn-primary">
+            <a
+                href="S_MAHALAKSHMI_RESUME.pdf"
+                target="_blank"
+                class="btn btn-primary"
+            >
                 View / Download Resume
             </a>
 
-            <a href="#projects"
-               class="btn btn-outline">
+            <a
+                href="#projects"
+                class="btn btn-outline"
+            >
                 View My Projects
             </a>
 
@@ -478,18 +557,19 @@
     <div class="about-content">
 
         <p>
-            I am an Entry-Level Cloud Engineer with foundational knowledge
-            of AWS cloud services, networking, Linux, basic scripting and
-            cloud operations. My hands-on learning includes projects
-            involving AWS S3, CloudFront, Lambda, API Gateway, VPC,
-            IAM, EventBridge, DynamoDB and CloudWatch.
+            I am an Entry-Level Cloud Engineer with AWS Certified
+            Cloud Practitioner credential and hands-on project
+            exposure to core AWS services including EC2, S3, IAM,
+            VPC, CloudFront, Lambda, API Gateway and CloudWatch.
         </p>
 
         <br>
 
         <p>
-            My career objective is to support cloud operations, monitoring
-            and incident handling while continuously learning and
+            My career objective is to support cloud operations,
+            monitoring and incident handling using foundational
+            knowledge of AWS services, networking, Linux and
+            basic scripting while continuously learning and
             contributing to reliable cloud environments.
         </p>
 
@@ -506,56 +586,135 @@
 
     <div class="skills-grid">
 
+
         <div class="skill-card">
-            <h3>☁ AWS Cloud</h3>
+
+            <h3>☁ AWS Cloud Services</h3>
+
             <p>
                 EC2, S3, IAM, VPC, CloudWatch, Lambda,
                 API Gateway, CloudTrail, Trusted Advisor,
-                Auto Scaling, SNS, SQS, CloudFront,
-                CloudFormation
+                Auto Scaling, SNS, SQS, CloudFront and
+                CloudFormation concepts.
             </p>
+
         </div>
 
+
         <div class="skill-card">
+
             <h3>🌐 Networking</h3>
+
             <p>
                 Subnetting, Security Groups, Route Tables,
-                NACLs, Internet Gateway, NAT Gateway
-                and basic VPN
+                NACLs, Internet Gateway (IGW),
+                NAT Gateway (basic) and VPN (basic).
             </p>
+
         </div>
 
+
         <div class="skill-card">
+
             <h3>🐧 Operating Systems</h3>
+
             <p>
                 Linux (Ubuntu, Amazon Linux)
-                and Windows OS
+                and Windows OS.
             </p>
+
         </div>
 
+
         <div class="skill-card">
+
             <h3>💻 Programming & Scripting</h3>
+
             <p>
                 Python basics, SQL basics and
-                Linux Shell Scripting
+                Linux Shell Scripting.
             </p>
+
         </div>
 
+
         <div class="skill-card">
+
             <h3>🔧 Version Control</h3>
+
             <p>
-                Git and GitHub
+                Git and GitHub.
             </p>
+
         </div>
 
+
         <div class="skill-card">
-            <h3>🗄 Databases & Tools</h3>
+
+            <h3>🗄 Databases</h3>
+
             <p>
-                MySQL, RDS, DynamoDB, Excel,
-                Word, PowerPoint, Zoho CRM
-                and Medics Easy
+                MySQL, Amazon RDS (basic)
+                and DynamoDB (basic).
             </p>
+
         </div>
+
+
+        <div class="skill-card">
+
+            <h3>🛠 Productivity & Tools</h3>
+
+            <p>
+                Excel, Word, PowerPoint,
+                Zoho CRM and Medics Easy.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CLOUD TRAINING ================= -->
+
+<section id="training">
+
+    <h2>Cloud Training & Hands-on Experience</h2>
+
+    <div class="training-card">
+
+        <h3>
+            AWS Cloud Trainee |
+            Cultus Education (TNSDC Program)
+        </h3>
+
+        <div class="training-date">
+            Chennai | July 2025 – November 2025
+        </div>
+
+        <ul>
+
+            <li>
+                Completed AWS Cloud Practitioner training with
+                practical exposure to Linux, Git, Python basics,
+                SQL basics and core AWS services.
+            </li>
+
+            <li>
+                Built foundational understanding of AWS compute,
+                storage, networking, security and cost-optimization
+                concepts.
+            </li>
+
+            <li>
+                Developed cloud troubleshooting and operational
+                skills through guided beginner-level labs
+                and workflows.
+            </li>
+
+        </ul>
 
     </div>
 
@@ -577,10 +736,11 @@
         </h3>
 
         <div class="experience-date">
-            December 2021 – April 2025
+            Chennai & Hyderabad | December 2021 – April 2025
         </div>
 
         <ul>
+
             <li>
                 Managed sensitive case records using Zoho CRM
                 and Medics Easy, ensuring accurate documentation
@@ -600,10 +760,22 @@
             </li>
 
             <li>
+                Maintained accurate documentation with strong
+                attention to detail and data-handling precision.
+            </li>
+
+            <li>
                 Applied analytical and problem-solving skills
                 during assessments, transferable to IT
                 troubleshooting and system monitoring.
             </li>
+
+            <li>
+                Communicated findings clearly with patients
+                and teams, strengthening communication skills
+                for support environments.
+            </li>
+
         </ul>
 
     </div>
@@ -617,13 +789,15 @@
         </h3>
 
         <div class="experience-date">
-            July 2018 – July 2019
+            Chennai | July 2018 – July 2019
         </div>
 
         <ul>
+
             <li>
-                Maintained accurate documentation with strong
-                attention to detail and data-handling precision.
+                Maintained accurate clinical documentation
+                with strong attention to detail and
+                data-handling precision.
             </li>
 
             <li>
@@ -635,6 +809,7 @@
                 Communicated findings clearly with patients
                 and teams.
             </li>
+
         </ul>
 
     </div>
@@ -646,118 +821,139 @@
 
 <section id="projects" class="projects">
 
-    <h2>AWS Projects</h2>
+    <div class="projects-inner">
 
-    <div class="projects-grid">
+        <h2>AWS & Cloud Projects</h2>
 
-
-        <!-- PROJECT 1 -->
-
-        <div class="project-card">
-
-            <h3>
-                Personal Portfolio Website Deployment
-            </h3>
-
-            <p>
-                Designed and deployed a static personal portfolio
-                website using Amazon S3 and CloudFront for secure,
-                scalable and cost-efficient content delivery.
-                Implemented private S3 bucket access using
-                Origin Access Control (OAC) and enforced HTTPS.
-            </p>
-
-            <div class="project-link">
-
-                <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-1-s3-cloudfront-portfolio"
-                   target="_blank">
-                    View Project on GitHub →
-                </a>
-
-            </div>
-
-        </div>
+        <div class="projects-grid">
 
 
-        <!-- PROJECT 2 -->
+            <!-- PROJECT 1 -->
 
-        <div class="project-card">
+            <div class="project-card">
 
-            <h3>
-                Serverless VPC API
-            </h3>
+                <h3>
+                    Personal Portfolio Website Deployment
+                </h3>
 
-            <p>
-                Designed a secure serverless API using AWS Lambda
-                running inside private VPC subnets and exposed
-                through API Gateway. Integrated VPC interface
-                endpoints for CloudWatch logging, eliminating
-                direct internet access.
-            </p>
+                <p>
+                    Designed and deployed a static personal
+                    portfolio website using Amazon S3 and
+                    CloudFront for secure, scalable and
+                    cost-efficient content delivery.
+                    Implemented private S3 bucket access
+                    using Origin Access Control (OAC)
+                    and enforced HTTPS.
+                </p>
 
-            <div class="project-link">
+                <div class="project-link">
 
-                <a href="https://github.com/Maha-1998-sundar/project-2-serverless-vpc-api"
-                   target="_blank">
-                    View Project on GitHub →
-                </a>
+                    <a
+                        href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-1-s3-cloudfront-portfolio"
+                        target="_blank"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </div>
 
             </div>
 
-        </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <h3>
+                    Serverless VPC API
+                </h3>
+
+                <p>
+                    Designed a secure serverless API using
+                    AWS Lambda running inside private VPC
+                    subnets and exposed through API Gateway.
+                    Integrated VPC interface endpoints for
+                    CloudWatch logging, eliminating direct
+                    internet access while ensuring scalable
+                    HTTPS connectivity.
+                </p>
+
+                <div class="project-link">
+
+                    <a
+                        href="https://github.com/Maha-1998-sundar/project-2-serverless-vpc-api"
+                        target="_blank"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </div>
+
+            </div>
 
 
-        <!-- PROJECT 3 -->
+            <!-- PROJECT 3 -->
 
-        <div class="project-card">
+            <div class="project-card">
 
-            <h3>
-                Cloud Security & Observability
-            </h3>
+                <h3>
+                    Cloud Security & Observability
+                </h3>
 
-            <p>
-                Implemented real-time monitoring and alerting
-                using Amazon CloudWatch, AWS Lambda,
-                EventBridge and DynamoDB. Enabled event tracking,
-                audit logging, dashboards, alarms and
-                serverless workflows.
-            </p>
+                <p>
+                    Implemented real-time monitoring and
+                    alerting using Amazon CloudWatch,
+                    AWS Lambda, EventBridge and DynamoDB.
+                    Enabled automated event tracking,
+                    audit logging and operational visibility
+                    through dashboards, alarms and
+                    serverless workflows.
+                </p>
 
-            <div class="project-link">
+                <div class="project-link">
 
-                <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-3-cloud-security-observability"
-                   target="_blank">
-                    View Project on GitHub →
-                </a>
+                    <a
+                        href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-3-cloud-security-observability"
+                        target="_blank"
+                    >
+                        View Project on GitHub →
+                    </a>
+
+                </div>
 
             </div>
 
-        </div>
 
+            <!-- PROJECT 4 -->
 
-        <!-- PROJECT 4 -->
+            <div class="project-card">
 
-        <div class="project-card">
+                <h3>
+                    Linux Notes Tracker with Git & GitHub
+                </h3>
 
-            <h3>
-                Linux Notes Tracker
-            </h3>
+                <p>
+                    Created a Linux-based notes tracking
+                    project to document commands and concepts
+                    using Markdown. Practiced essential
+                    version-control workflows including
+                    cloning repositories, committing changes
+                    and pushing updates.
+                </p>
 
-            <p>
-                Created a Linux-based notes tracking project
-                using Markdown. Practiced Git and GitHub
-                workflows including cloning repositories,
-                committing changes and pushing updates.
-            </p>
+                <div class="project-link">
 
-            <div class="project-link">
+                    <a
+                        href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-4-linux-notes-tracker"
+                        target="_blank"
+                    >
+                        View Project on GitHub →
+                    </a>
 
-                <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-4-linux-notes-tracker"
-                   target="_blank">
-                    View Project on GitHub →
-                </a>
+                </div>
 
             </div>
+
 
         </div>
 
@@ -843,8 +1039,10 @@
 
     <div class="credly">
 
-        <a href="https://www.credly.com/users/s-mahalakshmi"
-           target="_blank">
+        <a
+            href="https://www.credly.com/users/s-mahalakshmi"
+            target="_blank"
+        >
             View My Credly Profile →
         </a>
 
@@ -907,13 +1105,11 @@
         View or download my complete professional resume.
     </p>
 
-    <a href="resume.pdf"
-       target="_blank"
-       class="btn"
-       style="
-           background:#0b1f3a;
-           color:white;
-       ">
+    <a
+        href="S_MAHALAKSHMI_RESUME.pdf"
+        target="_blank"
+        class="resume-button"
+    >
         📄 View / Download Resume
     </a>
 
@@ -968,8 +1164,10 @@
     <p>
         💻
         <strong>GitHub:</strong>
-        <a href="https://github.com/Maha-1998-sundar"
-           target="_blank">
+        <a
+            href="https://github.com/Maha-1998-sundar"
+            target="_blank"
+        >
             Maha-1998-sundar
         </a>
     </p>
@@ -977,8 +1175,10 @@
     <p>
         🔗
         <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/mahalakshmi-profile"
-           target="_blank">
+        <a
+            href="https://www.linkedin.com/in/mahalakshmi-profile"
+            target="_blank"
+        >
             LinkedIn Profile
         </a>
     </p>
