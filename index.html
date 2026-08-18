@@ -3,318 +3,999 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mahalahshmi S | Cloud Engineer</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            background: #f4f6f8;
-            color: #222;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1f2937;
+            background: #f5f7fa;
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0b1f3a;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
-        header {
+        .logo {
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            border-bottom: 2px solid #123b6d;
-            padding-bottom: 25px;
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a33,
+                    #123f6d
+                );
+
+            color: white;
         }
 
-        h1 {
-            margin: 0;
-            color: #123b6d;
-            font-size: 36px;
+        .hero-content {
+            max-width: 850px;
         }
 
-        header p {
-            font-size: 20px;
-            margin: 8px 0;
+        .hero h1 {
+            font-size: 54px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            font-weight: normal;
+            margin-bottom: 25px;
+            color: #dbeafe;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 750px;
+            margin: auto;
+            color: #e5e7eb;
+        }
+
+        .hero-buttons {
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 6px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #0b1f3a;
+        }
+
+        .btn-primary:hover {
+            background: #dbeafe;
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0b1f3a;
+        }
+
+        /* GENERAL SECTION */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #0b1f3a;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(250px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #174d78;
+        }
+
+        .skill-card h3 {
+            color: #174d78;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #4b5563;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 5px solid #174d78;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .experience-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 5px;
+        }
+
+        .experience-date {
+            color: #6b7280;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .experience-card ul {
+            padding-left: 22px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: #eef3f8;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(300px, 1fr)
+            );
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            color: #174d78;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #4b5563;
+        }
+
+        .project-link {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .project-link a {
+            color: #174d78;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            background: white;
+        }
+
+        .cert-card {
+            background: #f5f7fa;
+            padding: 22px;
+            margin-bottom: 18px;
+            border-left: 5px solid #174d78;
+        }
+
+        .cert-card h3 {
+            color: #0b1f3a;
+        }
+
+        .cert-card p {
+            color: #555;
+        }
+
+        .credly {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .credly a {
+            color: #174d78;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #174d78;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #0b1f3a;
+        }
+
+        /* RESUME */
+
+        .resume-section {
+            text-align: center;
+            background: #eef3f8;
+        }
+
+        .resume-section p {
+            margin-bottom: 20px;
+        }
+
+        /* LANGUAGES */
+
+        .languages {
+            text-align: center;
+        }
+
+        .language-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .language {
+            background: white;
+            padding: 12px 22px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            max-width: none;
+            background: #0b1f3a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            margin: 12px;
         }
 
         .contact a {
-            color: #123b6d;
+            color: #dbeafe;
             text-decoration: none;
-            margin: 0 8px;
         }
 
-        section {
-            margin-top: 30px;
+        .contact a:hover {
+            text-decoration: underline;
         }
 
-        h2 {
-            color: #123b6d;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 6px;
-        }
-
-        .project {
-            margin-bottom: 22px;
-        }
-
-        .project h3 {
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        ul {
-            padding-left: 25px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #123b6d;
-            color: white;
-            padding: 12px 22px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-
-        .button:hover {
-            background: #0b294c;
-        }
+        /* FOOTER */
 
         footer {
+            background: #061426;
+            color: white;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            section {
+                padding: 55px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- ================= NAVIGATION ================= -->
 
-<header>
-    <h1>MAHALAKSHMI S</h1>
-    <p>Cloud Engineer (Entry Level)</p>
+<nav>
 
-    <div class="contact">
-        <p>+91 7358559144</p>
+    <div class="logo">
+        Mahalakshmi S
+    </div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <div class="hero-content">
+
+        <h1>MAHALAKSHMI S</h1>
+
+        <h2>Cloud Engineer (Entry Level)</h2>
+
+        <p>
+            Entry-Level Cloud Engineer with AWS Certified Cloud Practitioner
+            credential and hands-on project exposure to AWS services,
+            networking, Linux, Git/GitHub, Python and SQL.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="resume.pdf"
+               target="_blank"
+               class="btn btn-primary">
+                View / Download Resume
+            </a>
+
+            <a href="#projects"
+               class="btn btn-outline">
+                View My Projects
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about">
+
+    <h2>About Me</h2>
+
+    <div class="about-content">
+
+        <p>
+            I am an Entry-Level Cloud Engineer with foundational knowledge
+            of AWS cloud services, networking, Linux, basic scripting and
+            cloud operations. My hands-on learning includes projects
+            involving AWS S3, CloudFront, Lambda, API Gateway, VPC,
+            IAM, EventBridge, DynamoDB and CloudWatch.
+        </p>
+
+        <br>
+
+        <p>
+            My career objective is to support cloud operations, monitoring
+            and incident handling while continuously learning and
+            contributing to reliable cloud environments.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>☁ AWS Cloud</h3>
+            <p>
+                EC2, S3, IAM, VPC, CloudWatch, Lambda,
+                API Gateway, CloudTrail, Trusted Advisor,
+                Auto Scaling, SNS, SQS, CloudFront,
+                CloudFormation
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🌐 Networking</h3>
+            <p>
+                Subnetting, Security Groups, Route Tables,
+                NACLs, Internet Gateway, NAT Gateway
+                and basic VPN
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🐧 Operating Systems</h3>
+            <p>
+                Linux (Ubuntu, Amazon Linux)
+                and Windows OS
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>💻 Programming & Scripting</h3>
+            <p>
+                Python basics, SQL basics and
+                Linux Shell Scripting
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🔧 Version Control</h3>
+            <p>
+                Git and GitHub
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🗄 Databases & Tools</h3>
+            <p>
+                MySQL, RDS, DynamoDB, Excel,
+                Word, PowerPoint, Zoho CRM
+                and Medics Easy
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+    <h2>Professional Experience</h2>
+
+
+    <div class="experience-card">
+
+        <h3>
+            Psychological Counsellor |
+            Nova IVF Fertility
+        </h3>
+
+        <div class="experience-date">
+            December 2021 – April 2025
+        </div>
+
+        <ul>
+            <li>
+                Managed sensitive case records using Zoho CRM
+                and Medics Easy, ensuring accurate documentation
+                and workflow management.
+            </li>
+
+            <li>
+                Handled client interactions, tele-support and
+                issue resolution, strengthening user-support
+                and customer-handling skills.
+            </li>
+
+            <li>
+                Collaborated with cross-functional teams,
+                supporting process-driven execution in a
+                regulated environment.
+            </li>
+
+            <li>
+                Applied analytical and problem-solving skills
+                during assessments, transferable to IT
+                troubleshooting and system monitoring.
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="experience-card">
+
+        <h3>
+            Neurology Physician Intern |
+            Chettinad Academy of Research and Education
+        </h3>
+
+        <div class="experience-date">
+            July 2018 – July 2019
+        </div>
+
+        <ul>
+            <li>
+                Maintained accurate documentation with strong
+                attention to detail and data-handling precision.
+            </li>
+
+            <li>
+                Applied analytical and problem-solving skills
+                during assessments.
+            </li>
+
+            <li>
+                Communicated findings clearly with patients
+                and teams.
+            </li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" class="projects">
+
+    <h2>AWS Projects</h2>
+
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            <h3>
+                Personal Portfolio Website Deployment
+            </h3>
+
+            <p>
+                Designed and deployed a static personal portfolio
+                website using Amazon S3 and CloudFront for secure,
+                scalable and cost-efficient content delivery.
+                Implemented private S3 bucket access using
+                Origin Access Control (OAC) and enforced HTTPS.
+            </p>
+
+            <div class="project-link">
+
+                <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-1-s3-cloudfront-portfolio"
+                   target="_blank">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <h3>
+                Serverless VPC API
+            </h3>
+
+            <p>
+                Designed a secure serverless API using AWS Lambda
+                running inside private VPC subnets and exposed
+                through API Gateway. Integrated VPC interface
+                endpoints for CloudWatch logging, eliminating
+                direct internet access.
+            </p>
+
+            <div class="project-link">
+
+                <a href="https://github.com/Maha-1998-sundar/project-2-serverless-vpc-api"
+                   target="_blank">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            <h3>
+                Cloud Security & Observability
+            </h3>
+
+            <p>
+                Implemented real-time monitoring and alerting
+                using Amazon CloudWatch, AWS Lambda,
+                EventBridge and DynamoDB. Enabled event tracking,
+                audit logging, dashboards, alarms and
+                serverless workflows.
+            </p>
+
+            <div class="project-link">
+
+                <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-3-cloud-security-observability"
+                   target="_blank">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="project-card">
+
+            <h3>
+                Linux Notes Tracker
+            </h3>
+
+            <p>
+                Created a Linux-based notes tracking project
+                using Markdown. Practiced Git and GitHub
+                workflows including cloning repositories,
+                committing changes and pushing updates.
+            </p>
+
+            <div class="project-link">
+
+                <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-4-linux-notes-tracker"
+                   target="_blank">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications" class="certifications">
+
+    <h2>Cloud Certifications</h2>
+
+
+    <div class="cert-card">
+
+        <h3>
+            AWS Certified Cloud Practitioner (CLF-C02)
+        </h3>
+
+        <p>
+            Amazon Web Services
+        </p>
+
+        <p>
+            Issued: November 2025
+        </p>
+
+    </div>
+
+
+    <div class="cert-card">
+
+        <h3>
+            AWS re/Start Graduate
+        </h3>
+
+        <p>
+            Amazon Web Services
+        </p>
+
+        <p>
+            Issued: October 2025
+        </p>
+
+    </div>
+
+
+    <div class="cert-card">
+
+        <h3>
+            Multi-Cloud Workshop
+        </h3>
+
+        <p>
+            CoreXTech IT Services Pvt. Ltd.
+        </p>
+
+        <p>
+            Issued: November 2025
+        </p>
+
+    </div>
+
+
+    <div class="cert-card">
+
+        <h3>
+            Multi Cloud + DevOps with AI Bootcamp
+        </h3>
+
+        <p>
+            Cloud DevOps Hub
+        </p>
+
+        <p>
+            Issued: November 2025
+        </p>
+
+    </div>
+
+
+    <div class="credly">
+
+        <a href="https://www.credly.com/users/s-mahalakshmi"
+           target="_blank">
+            View My Credly Profile →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <h2>Education</h2>
+
+
+    <div class="education-card">
+
+        <h3>
+            Master of Science in Counseling Psychology
+        </h3>
+
+        <p>
+            Chettinad Academy of Research and Education, Chennai
+        </p>
+
+        <p>
+            2019 – 2021 | CGPA: 8.6/10
+        </p>
+
+    </div>
+
+
+    <div class="education-card">
+
+        <h3>
+            Bachelor of Science in Allied Health Sciences
+            (Neuroscience Technology)
+        </h3>
+
+        <p>
+            Chettinad Academy of Research and Education, Chennai
+        </p>
+
+        <p>
+            2015 – 2019 | CGPA: 8.0/10
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESUME ================= -->
+
+<section id="resume" class="resume-section">
+
+    <h2>My Resume</h2>
+
+    <p>
+        View or download my complete professional resume.
+    </p>
+
+    <a href="resume.pdf"
+       target="_blank"
+       class="btn"
+       style="
+           background:#0b1f3a;
+           color:white;
+       ">
+        📄 View / Download Resume
+    </a>
+
+</section>
+
+
+<!-- ================= LANGUAGES ================= -->
+
+<section class="languages">
+
+    <h2>Languages</h2>
+
+    <div class="language-list">
+
+        <div class="language">
+            English – Fluent
+        </div>
+
+        <div class="language">
+            Tamil – Native
+        </div>
+
+        <div class="language">
+            Telugu – Basic Speaking
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>
+        📧
+        <strong>Email:</strong>
         <a href="mailto:lakshmisundar2020@gmail.com">
             lakshmisundar2020@gmail.com
         </a>
-        <br>
-        <a href="https://github.com/Maha-1998-sundar" target="_blank">
-            GitHub
+    </p>
+
+    <p>
+        📱
+        <strong>Phone:</strong>
+        +91 7358559144
+    </p>
+
+    <p>
+        💻
+        <strong>GitHub:</strong>
+        <a href="https://github.com/Maha-1998-sundar"
+           target="_blank">
+            Maha-1998-sundar
         </a>
-        |
-        <a href="https://www.linkedin.com/in/mahalakshmi-profile" target="_blank">
-            LinkedIn
+    </p>
+
+    <p>
+        🔗
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/mahalakshmi-profile"
+           target="_blank">
+            LinkedIn Profile
         </a>
-    </div>
-
-    <a class="button" href="resume.pdf" target="_blank">
-        View / Download Resume
-    </a>
-</header>
-
-<section>
-    <h2>Career Objective</h2>
-    <p>
-        To begin my career as an Entry-Level Cloud Engineer by supporting cloud
-        operations, monitoring, and incident handling using foundational knowledge
-        of AWS services, networking, Linux, and basic scripting, while continuously
-        learning and contributing to reliable cloud environments.
-    </p>
-</section>
-
-<section>
-    <h2>Professional Summary</h2>
-    <p>
-        Entry-Level Cloud Engineer with AWS Certified Cloud Practitioner credential
-        and hands-on project exposure to core AWS services including EC2, S3, IAM,
-        VPC, CloudFront, Lambda, API Gateway, and CloudWatch. Built cloud projects
-        involving static website hosting, serverless APIs within VPC environments,
-        and basic security and monitoring automation.
-    </p>
-</section>
-
-<section>
-    <h2>Technical Skills</h2>
-
-    <ul>
-        <li><strong>AWS:</strong> EC2, S3, IAM, VPC, CloudWatch, Lambda,
-            API Gateway, CloudTrail, Trusted Advisor, Auto Scaling,
-            SNS, SQS, CloudFront, CloudFormation</li>
-
-        <li><strong>Operating Systems:</strong> Linux (Ubuntu, Amazon Linux),
-            Windows OS</li>
-
-        <li><strong>Networking:</strong> Subnetting, Security Groups,
-            Route Tables, NACLs, Internet Gateway, NAT Gateway, VPN</li>
-
-        <li><strong>Programming & Scripting:</strong> Python, SQL,
-            Linux Shell Scripting</li>
-
-        <li><strong>Version Control:</strong> Git, GitHub</li>
-
-        <li><strong>Databases:</strong> MySQL, RDS, DynamoDB</li>
-
-        <li><strong>Tools:</strong> Excel, Word, PowerPoint, Zoho CRM,
-            Medics Easy</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Projects</h2>
-
-    <div class="project">
-        <h3>Personal Portfolio Website Deployment (AWS S3 + CloudFront)</h3>
-        <p>
-            Designed and deployed a static personal portfolio website using
-            Amazon S3 and CloudFront for secure, scalable, and cost-efficient
-            content delivery. Implemented private S3 bucket access using
-            Origin Access Control (OAC) and enforced HTTPS.
-        </p>
-        <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-1-s3-cloudfront-portfolio"
-           target="_blank">View Project on GitHub</a>
-    </div>
-
-    <div class="project">
-        <h3>Serverless VPC API (Lambda + API Gateway)</h3>
-        <p>
-            Designed a secure serverless API using AWS Lambda running inside
-            private VPC subnets and exposed through API Gateway. Integrated
-            VPC interface endpoints for CloudWatch logging.
-        </p>
-        <a href="https://github.com/Maha-1998-sundar/project-2-serverless-vpc-api"
-           target="_blank">View Project on GitHub</a>
-    </div>
-
-    <div class="project">
-        <h3>Cloud Security & Observability Command Center</h3>
-        <p>
-            Implemented real-time monitoring and alerting using Amazon
-            CloudWatch, AWS Lambda, EventBridge, and DynamoDB. Enabled
-            event tracking, audit logging, dashboards, and alarms.
-        </p>
-        <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-3-cloud-security-observability"
-           target="_blank">View Project on GitHub</a>
-    </div>
-
-    <div class="project">
-        <h3>Linux Notes Tracker with Git & GitHub</h3>
-        <p>
-            Created a Linux-based notes tracking project using Markdown
-            and practiced Git and GitHub version-control workflows.
-        </p>
-        <a href="https://github.com/Maha-1998-sundar/aws-cloud-practitioner-portfolio/tree/main/project-4-linux-notes-tracker"
-           target="_blank">View Project on GitHub</a>
-    </div>
-</section>
-
-<section>
-    <h2>Cloud Training & Hands-on Experience</h2>
-
-    <h3>AWS Cloud Trainee | Cultus Education (TNSDC Program)</h3>
-    <p><strong>Chennai | July 2025 - November 2025</strong></p>
-
-    <ul>
-        <li>Completed AWS Cloud Practitioner training with practical exposure
-            to Linux, Git, Python basics, SQL basics, and core AWS services.</li>
-        <li>Built foundational understanding of AWS compute, storage,
-            networking, security, and cost-optimization concepts.</li>
-        <li>Developed cloud troubleshooting and operational skills through
-            guided beginner-level labs and workflows.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Cloud Certifications</h2>
-
-    <ul>
-        <li>
-            <strong>AWS Certified Cloud Practitioner (CLF-C02)</strong>
-            – Amazon Web Services<br>
-            Issued: November 2025
-        </li>
-
-        <li>
-            <strong>AWS re/Start Graduate</strong>
-            – Amazon Web Services<br>
-            Issued: October 2025
-        </li>
-
-        <li>
-            <strong>Multi-Cloud Workshop</strong>
-            – CoreXTech IT Services Pvt. Ltd.<br>
-            Issued: November 2025
-        </li>
-
-        <li>
-            <strong>Multi Cloud + DevOps with AI Bootcamp</strong>
-            – Cloud DevOps Hub<br>
-            Issued: November 2025
-        </li>
-    </ul>
-
-    <a href="https://www.credly.com/users/s-mahalakshmi"
-       target="_blank">
-        View Credly Profile
-    </a>
-</section>
-
-<section>
-    <h2>Professional Experience</h2>
-
-    <h3>Psychological Counsellor | Nova IVF Fertility</h3>
-    <p><strong>December 2021 – April 2025</strong></p>
-
-    <ul>
-        <li>Managed sensitive case records using Zoho CRM and Medics Easy.</li>
-        <li>Handled client interactions, tele-support, and issue resolution.</li>
-        <li>Collaborated with cross-functional teams in a process-driven environment.</li>
-    </ul>
-
-    <h3>Neurology Physician Intern | Chettinad Academy of Research and Education</h3>
-    <p><strong>July 2018 – July 2019</strong></p>
-
-    <ul>
-        <li>Maintained accurate documentation with strong attention to detail.</li>
-        <li>Applied analytical and problem-solving skills.</li>
-        <li>Communicated findings clearly with patients and teams.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Education</h2>
-
-    <h3>Master of Science in Counseling Psychology</h3>
-    <p>
-        Chettinad Academy of Research and Education, Chennai<br>
-        2019 – 2021 | CGPA: 8.6/10
     </p>
 
-    <h3>Bachelor of Science in Allied Health Sciences (Neuroscience Technology)</h3>
-    <p>
-        Chettinad Academy of Research and Education, Chennai<br>
-        2015 – 2019 | CGPA: 8.0/10
-    </p>
 </section>
 
-<section>
-    <h2>Languages</h2>
-    <p>
-        English (Fluent) | Tamil (Native) | Telugu (Basic Speaking)
-    </p>
-</section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    <p>© 2026 Mahalakshmi S</p>
+
+    <p>
+        © 2026 Mahalakshmi S | Cloud Engineer
+    </p>
+
 </footer>
 
-</div>
 
 </body>
 </html>
